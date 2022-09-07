@@ -19,10 +19,10 @@ solution_for_7 PROC PUBLIC USES EBX ECX EDX ESI source: PTR BYTE
             cmp byte ptr[ebx], 41
             je closing_bracket
             jmp back
-        opening_bracket :
+        opening_bracket:
             inc ecx
             jmp back
-        closing_bracket :
+        closing_bracket:
             dec ecx
         back:
             inc ebx

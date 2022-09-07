@@ -64,17 +64,17 @@ solution_for_grade_8 PROC EXPORT \
         xor esi, esi
         mov ecx, [arr_cols]
         xor edi, edi
-        col_loop :
+        col_loop:
             push ecx
             mov eax, [arr]
             push esi
             xor ebx, ebx
             mov ecx, [arr_rows]
-        row_loop :
+        row_loop:
             test dword ptr[eax+esi*4], 1
             jnz odd
             inc ebx
-        odd :
+        odd:
             add esi, [arr_cols]
             loop row_loop
             mov eax, result
@@ -107,22 +107,22 @@ solution_for_grade_9 PROC EXPORT \
         xor esi, esi
         mov ecx, [arr_cols]
         xor edi, edi
-        col_loop :
+        col_loop:
         push ecx
             mov eax, [arr]
             xor ebx, ebx
             push esi
             mov ecx, [arr_rows]
-        row_loop :
+        row_loop:
             cmp dword ptr [eax+esi*4], 0
             jle skip
             cmp ebx, 0
             je min_found
             cmp dword ptr[eax + esi * 4], ebx
             jge skip
-        min_found :
+        min_found:
             mov ebx, dword ptr[eax + esi * 4]
-        skip :
+        skip:
             add esi, [arr_cols]
             loop row_loop
             mov eax, result
