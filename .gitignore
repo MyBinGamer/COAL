@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Just some random file types i don't want to see together with my precious .cpp files :)
+*.vcxproj
+*.vcxproj.filters
